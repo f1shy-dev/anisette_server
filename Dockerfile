@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y make git curl c
 WORKDIR /opt/
 COPY . .
 RUN mkdir build/
-RUN git submodule update --init --recursive
+RUN mkdir -p cmake && git clone https://github.com/Dadoum/cmake-d cmake/cmake-d
 WORKDIR /opt/build
 RUN cmake .. -DCMAKE_BUILD_TYPE=Release -Dbuild_sideloadipa=OFF -Dlink_libplist_dynamic=ON \
     && make anisette_server
