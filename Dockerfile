@@ -33,4 +33,5 @@ RUN useradd -ms /bin/bash Chester \
 
 # Run the artefact
 USER Chester
+EXPOSE 6969
 ENTRYPOINT [ "/opt/docker-entrypoint.sh" ]
